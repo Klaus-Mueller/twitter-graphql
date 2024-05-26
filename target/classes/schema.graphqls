@@ -2,14 +2,27 @@
 type Query {
     tweet(id: ID!): Tweet
     tweets: [Tweet]
+    getUser(id: ID!) : User
 }
 
 type Mutation {
-    createTweet(content: String!, author: String!): Tweet
+    createTweet(content: String!, user: String!): Tweet
+    createUser(username: String!, email: String!): User
 }
 
 type Tweet {
     id: ID!
     content: String!
-    author: String!
+    createdAt: String!
+    updatedAt: String!
+    user: User!  # Add a field to establish the relationship between a tweet and its creator
+}
+
+type User {
+    id: ID!
+    username: String!
+    email: String!
+    createdAt: String!
+    updatedAt: String!
+    tweets: [Tweet!]!  # Add a field to represent the tweets created by the user
 }

@@ -3,12 +3,12 @@ package org.example.twitter.api;
 public class Tweet {
     public String id;
     public String content;
-    public String author;
+    public User user;
 
-    public Tweet(String id, String content, String author) {
+    public Tweet(String id, String content, User user) {
         this.id = id;
         this.content = content;
-        this.author = author;
+        this.user = user;
     }
 
     public String getId() {
@@ -27,11 +27,11 @@ public class Tweet {
         this.content = content;
     }
 
-    public String getAuthor() {
-        return author;
+    public User getUser() {
+        return this.user;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -1,0 +1,15 @@
+# schema.graphqls
+type Query {
+    tweet(id: ID!): Tweet
+    tweets: [Tweet]
+}
+
+type Mutation {
+    createTweet(content: String!, author: String!): Tweet
+}
+
+type Tweet {
+    id: ID!
+    content: String!
+    author: String!
+}
